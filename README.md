@@ -35,3 +35,16 @@ public class Testing
 		sc.close();
 	}
 }
+
+public class Testing {
+	public static void main(String[] argv) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		while (sc.hasNext()) {
+			int value = Integer.parseInt(sc.nextLine(), 2);
+			System.out.print(Character.toString((char) value));
+
+		}
+
+	}
+}
+

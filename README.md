@@ -1,4 +1,3 @@
-# spring-boot1
 package test;
 
 import java.util.Scanner;
@@ -9,30 +8,28 @@ public class Testing
 		Scanner sc = new Scanner(System.in);
 		int steps = Integer.parseInt(sc.nextLine());
 		int time = Integer.parseInt(sc.nextLine());
+		int aStep = 0;
+		int bStep = 0;
 		
-		while(sc.hasNext())
+		for(int i=0; i<time; i++)
 		{
 			String[] abSteps = sc.nextLine().split(" ");
-			int aStep = Integer.parseInt(abSteps[0]);
-			int bStep = Integer.parseInt(abSteps[1]);
-			int chrono = 1;
-			while(aStep < steps && bStep < steps && chrono < time)
-			{
-				aStep = aStep + aStep;
-				bStep = bStep + bStep;
-				chrono = chrono + chrono;
-			}
+			aStep = aStep + Integer.parseInt(abSteps[0]);
+			bStep = bStep + Integer.parseInt(abSteps[1]);
 			if(aStep == steps && bStep == steps)
 			{
 				System.out.println("NO WINNER");
+				break;
 			}
 			else if(aStep >= steps)
 			{
 				System.out.println("A");
+				break;
 			}
-			else
+			else if(bStep >= steps)
 			{
 				System.out.println("B");
+				break;
 			}
 		}
 		sc.close();
